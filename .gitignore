@@ -30,3 +30,12 @@
 *.exe
 *.out
 *.app
+.vs/ProjectSettings.json
+.vs/slnx.sqlite
+.vs/VisualOdometry/v15/.suo
+.vs/VisualOdometry/v15/Browse.VC.db
+.vs/VSWorkspaceState.json
+VisualOdometry/Debug/VisualOdometry.log
+VisualOdometry/Debug/VisualOdometry.tlog/VisualOdometry.lastbuildstate
+VisualOdometry/VisualOdometry.vcxproj
+VisualOdometry/VisualOdometry.vcxproj.filters
