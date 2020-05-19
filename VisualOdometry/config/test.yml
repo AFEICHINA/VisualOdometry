@@ -1,0 +1,15 @@
+%YAML:1.0
+
+CamNum:2
+
+ImagePath: "data/01/"
+ImageFormate: ".jpg"
+ImageNum: 10
+ImageStartFrame: 0
+ImageEndFrame: 10
+ImageWidth: 1200
+ImageHeight: 800
+
+
+
+
