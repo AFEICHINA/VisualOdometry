@@ -3,7 +3,7 @@
 int main(int argc,char** argv) {
         MainEngine MainEngine;
         MainEngine.ReadConfigrationFiles(argc,argv);
-        MainEngine.setParameters();
-        MainEngine.run();
+        MainEngine.SetupParameters();
+        MainEngine.Run();
 	return 0;
 }
