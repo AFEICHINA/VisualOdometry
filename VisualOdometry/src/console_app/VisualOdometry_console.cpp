@@ -1,9 +1,10 @@
 #include "main_engine/MainEngine.h"
 
-int main(int argc,char** argv) {
+int main(int argc,char* argv) {
         MainEngine MainEngine;
-        MainEngine.ReadConfigrationFiles(argc,argv);
+        MainEngine.ReadConfigrationFiles(argc, argv);
         MainEngine.SetupParameters();
         MainEngine.Run();
-	return 0;
+
+		return 0;
 }
