@@ -3,9 +3,13 @@
 #define _MAINENGINE_H_
 
 #include <iostream>
+#include <string>
 #include <opencv/cv.h>
 
+using namespace std;
+
 class MainEngine {
+
 public:
 	MainEngine();
 	~MainEngine();
@@ -14,6 +18,7 @@ public:
 	void SetupParameters();
 	void Run();
 
-
+	int CamNum;
+	string dataPath;
 };
 #endif // !_MAINENGINE_H_

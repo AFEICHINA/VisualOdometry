@@ -6,5 +6,6 @@ int main(int argc,char* argv) {
         MainEngine.SetupParameters();
         MainEngine.Run();
 
+		getchar();
 		return 0;
 }
