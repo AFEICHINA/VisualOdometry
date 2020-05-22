@@ -41,10 +41,10 @@ void MainEngine::ReadConfigrationFiles(int argc,char** argv)
 		fs["start_frame"] >> start_frame;
 	}
 	if (!fs["end_frame"].empty()) {
-		fs["end_frame"] >> start_frame;
+		fs["end_frame"] >> end_frame;
 	}
 	if (!fs["output_path"].empty()) {
-		fs["output_path"] >> start_frame;
+		fs["output_path"] >> output_path;
 	}
 	if (!fs["cam0_calib"].empty()) {
 		fs["cam0_calib"] >> cam0_calib;
@@ -65,8 +65,31 @@ void MainEngine::ReadConfigrationFiles(int argc,char** argv)
 
 void MainEngine::SetupParameters()
 {
+
 }
 
 void MainEngine::Run()
 {
+	while (ProcessNextFrame()) {
+		cout << "ok" << endl;
+	}
+}
+
+bool MainEngine::ProcessNextFrame()
+{
+	bool flag = false;
+	int current_frame=0, frame_step=1;
+
+	if (current_frame + frame_step <= num_frames)
+	{
+		current_frame += frame_step;
+		flag = ProcessOneFrame(current_frame);
+		cout << "tracking finished" << endl;
+	}
+	return flag;
+}
+
+bool MainEngine::ProcessOneFrame(int n_frame)
+{
+	return true;
 }

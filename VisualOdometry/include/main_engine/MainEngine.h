@@ -17,6 +17,8 @@ public:
 	void ReadConfigrationFiles(int argc,char** argv);
 	void SetupParameters();
 	void Run();
+	bool ProcessNextFrame();
+	bool ProcessOneFrame(int n_frame);
 
 	int imu;
 	int num_of_cam;
