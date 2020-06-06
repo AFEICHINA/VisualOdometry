@@ -8,7 +8,7 @@ MainEngine::~MainEngine()
 {
 }
 
-void MainEngine::ReadConfigrationFiles(int argc,char** argv)
+void MainEngine::ReadConfigrationFiles(int argc,char* argv[])
 {
 	cv::FileStorage fs;
 	if (argc<2) {
@@ -58,14 +58,21 @@ void MainEngine::ReadConfigrationFiles(int argc,char** argv)
 	if (!fs["image_height"].empty()) {
 		fs["image_height"] >> image_height;
 	}
-
+	if (!fs["body_T_cam0"].empty()) {
+		fs["body_T_cam0"] >> T_l;
+		//cout << T_l << endl;
+	}
+	if (!fs["body_T_cam1"].empty()) {
+		fs["body_T_cam1"] >> T_r;
+	}
 
 	fs.release();
 }
 
 void MainEngine::SetupParameters()
 {
-
+	camera.setConfig();
+	estimator.setConfig();
 }
 
 void MainEngine::Run()
