@@ -44,3 +44,4 @@ VisualOdometry/VisualOdometry.vcxproj.filters
 .vs/VisualOdometry/v15/ipch/AutoPCH/bbbf93ab7a0d031a/MAINENGINE.ipch
 .vs/VisualOdometry/v15/ipch/AutoPCH/693eb3f5763567e3/CAMERA.ipch
 *.ipch
+Debug/VisualOdometry.ilk
