@@ -5,8 +5,14 @@
 #include <iostream>
 #include <string>
 #include <opencv/cv.h>
+#include "estimator/Estimator.h"
+#include "camera/Camera.h"
 
 using namespace std;
+
+struct {
+
+};
 
 class MainEngine {
 
@@ -14,7 +20,7 @@ public:
 	MainEngine();
 	~MainEngine();
 
-	void ReadConfigrationFiles(int argc,char** argv);
+	void ReadConfigrationFiles(int argc,char* argv[]);
 	void SetupParameters();
 	void Run();
 	bool ProcessNextFrame();
@@ -32,7 +38,9 @@ public:
 	string cam1_calib;
 	int image_width;
 	int image_height;
-	double t_l[4][4],t_r[4][4];
+	cv::Mat T_l, T_r;
+	Estimator estimator;
+	Camera camera;
 	
 };
 #endif // !_MAINENGINE_H_
