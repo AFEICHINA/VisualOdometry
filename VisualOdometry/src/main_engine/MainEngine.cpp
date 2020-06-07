@@ -25,7 +25,7 @@ void MainEngine::ReadConfigrationFiles(int argc,char* argv[])
 		cout << imu <<endl;
 	}
 	if (!fs["num_of_cam"].empty()) {
-		fs["num_of_cam"] >> num_of_cam;
+		fs["num_of_cam"] >> Cconfig.cam_num;
 		cout << num_of_cam << endl;
 	}
 	if (!fs["data_path"].empty()) {
@@ -47,16 +47,16 @@ void MainEngine::ReadConfigrationFiles(int argc,char* argv[])
 		fs["output_path"] >> output_path;
 	}
 	if (!fs["cam0_calib"].empty()) {
-		fs["cam0_calib"] >> cam0_calib;
+		fs["cam0_calib"] >> Cconfig.cam0_calib;
 	}
 	if (!fs["cam1_calib"].empty()) {
-		fs["cam1_calib"] >> cam1_calib;
+		fs["cam1_calib"] >> Cconfig.cam1_calib;
 	}
 	if (!fs["image_width"].empty()) {
-		fs["image_width"] >> image_width;
+		fs["image_width"] >> Cconfig.image_width;
 	}
 	if (!fs["image_height"].empty()) {
-		fs["image_height"] >> image_height;
+		fs["image_height"] >> Cconfig.image_height;
 	}
 	if (!fs["body_T_cam0"].empty()) {
 		fs["body_T_cam0"] >> T_l;
@@ -71,7 +71,7 @@ void MainEngine::ReadConfigrationFiles(int argc,char* argv[])
 
 void MainEngine::SetupParameters()
 {
-	camera.setConfig();
+	camera.setConfig(Cconfig);
 	estimator.setConfig();
 }
 

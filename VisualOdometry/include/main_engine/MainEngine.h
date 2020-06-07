@@ -7,12 +7,9 @@
 #include <opencv/cv.h>
 #include "estimator/Estimator.h"
 #include "camera/Camera.h"
+#include "utils/Settings.h"
 
 using namespace std;
-
-struct {
-
-};
 
 class MainEngine {
 
@@ -34,13 +31,13 @@ public:
 	string image_format;
 	string data_path;
 	string output_path;
-	string cam0_calib;
-	string cam1_calib;
-	int image_width;
-	int image_height;
+
 	cv::Mat T_l, T_r;
+
 	Estimator estimator;
 	Camera camera;
-	
+
+	CameraConfig Cconfig;
+
 };
 #endif // !_MAINENGINE_H_
