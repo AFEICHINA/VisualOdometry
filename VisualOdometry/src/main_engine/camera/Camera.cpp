@@ -44,11 +44,31 @@ bool Camera::setConfig(CameraConfig config)
 		return true;
 	}
 	else if(cam_num == 2){
-
+		cv::FileStorage cam0_fs(cam0_calib_file, cv::FileStorage::READ);
+		cam0 = cam0_fs;
+		if (!cam0["model_type"].empty()) {
+			cam0["model_type"] >> cam0_modelType;
+		}
+		if (!cam0["camera_name"].empty()) {
+			cam0["camera_name"] >> cam0_name;
+		}
+		if (!cam0["image_width"].empty()) {
+			cam0["image_width"] >> image_width;
+		}
+		if (!cam0["mirror_parameters"].empty()) {
+			cam0["mirror_parameters"] >> mirror_parameters;
+			std::cout << mirror_parameters << std::endl;
+		}
+		if (!cam0["distortion_parameters"].empty()) {
+			cam0["distortion_parameters"] >> distortion_parameters;
+		}
+		if (!cam0["projection_parameters"].empty()) {
+			cam0["projection_parameters"] >> projection_parameters;
+		}
 		return true;
 	}
 	else {
-		std::cerr << "Cam Num should be 1 or 2 in Config Yaml File!" << std::endl;
+		std::cerr << "Error: Cam Num should be 1 or 2 in Config Yaml File!" << std::endl;
 		return false;
 	}
 
