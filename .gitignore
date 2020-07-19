@@ -45,3 +45,13 @@ VisualOdometry/VisualOdometry.vcxproj.filters
 .vs/VisualOdometry/v15/ipch/AutoPCH/693eb3f5763567e3/CAMERA.ipch
 *.ipch
 Debug/VisualOdometry.ilk
+*.json
+*.ilk
+*.pdb
+*.idb
+*.tlog
+*.tlog
+*.tlog
+*.ilk
+*.ilk
+*.tlog
